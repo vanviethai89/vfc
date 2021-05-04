@@ -7,8 +7,23 @@ use Illuminate\Database\Eloquent\Model;
 
 class Prayer extends Model
 {
-    const STATUS_NEW = 'NEW';
+    const STATUS_ACTIVE = 'ACTIVE';
     const STATUS_COMPLETED = 'COMPLETED';
 
+    protected $fillable = [
+        'title',
+        'content',
+        'owner_name',
+        'status'
+    ];
+
     use HasFactory;
+
+    public static function getListStatus()
+    {
+        return [
+            self::STATUS_ACTIVE,
+            self::STATUS_COMPLETED
+        ];
+    }
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PrayerController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,5 +21,10 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 Route::get('/prayer', [App\Http\Controllers\PrayerController::class, 'index'])->name('prayer');
 Route::get('/prayer/create', [App\Http\Controllers\PrayerController::class, 'create'])->name('prayer.create');
+Route::post('/prayer/create', [App\Http\Controllers\PrayerController::class, 'store'])->name('prayer.store');
+Route::get('/prayer/edit/{id}', [App\Http\Controllers\PrayerController::class, 'edit'])->name('prayer.edit');
+Route::put('/prayer/update/{id}', [App\Http\Controllers\PrayerController::class, 'update'])->name('prayer.update');
+Route::delete('/prayer/delete/{id}', [App\Http\Controllers\PrayerController::class, 'delete'])->name('prayer.delete');
