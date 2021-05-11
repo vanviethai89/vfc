@@ -18,7 +18,9 @@ class CreatePrayersTable extends Migration
             $table->string('title')->nullable();
             $table->longText('content')->nullable();
             $table->string('owner_name')->nullable();
-            $table->smallInteger('total_prayer')->nullable();
+            $table->smallInteger('total_prayer')->default(0)->nullable();
+            $table->longText('testimonial')->nullable();
+            $table->smallInteger('priority')->default(1)->nullable();
             $table->string('status')->nullable();
             $table->timestamps();
         });

@@ -14,6 +14,7 @@ class Prayer extends Model
         'title',
         'content',
         'owner_name',
+        'testimonial',
         'status'
     ];
 
@@ -25,5 +26,10 @@ class Prayer extends Model
             self::STATUS_ACTIVE,
             self::STATUS_COMPLETED
         ];
+    }
+
+    public function getContentFormattedAttribute()
+    {
+        return nl2br($this->content);
     }
 }

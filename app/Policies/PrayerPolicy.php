@@ -39,9 +39,10 @@ class PrayerPolicy
      * @param  \App\Models\User  $user
      * @return mixed
      */
-    public function create(?User $user)
-    {return true; // @todo:
-        return $user->role === User::ROLE_SUPPER_ADMIN;
+    public function create(User $user)
+    {
+        return true;
+//        return $user->role === User::ROLE_SUPPER_ADMIN;
     }
 
     /**
@@ -51,10 +52,11 @@ class PrayerPolicy
      * @param  \App\Models\Prayer  $prayer
      * @return mixed
      */
-    public function update(?User $user, Prayer $prayer)
-    {return true;
-        return $user->role === User::ROLE_SUPPER_ADMIN ||
-            $user->id === $prayer->owner->id;
+    public function update(User $user, Prayer $prayer)
+    {
+        return true;
+//        return $user->role === User::ROLE_SUPPER_ADMIN ||
+//            $user->id === $prayer->owner->id;
     }
 
     /**
@@ -64,10 +66,11 @@ class PrayerPolicy
      * @param  \App\Models\Prayer  $prayer
      * @return mixed
      */
-    public function delete(?User $user, Prayer $prayer)
-    {return true;
-        return $user->role === User::ROLE_SUPPER_ADMIN ||
-            $user->id === $prayer->owner->id;
+    public function delete(User $user, Prayer $prayer)
+    {
+        return true;
+//        return $user->role === User::ROLE_SUPPER_ADMIN ||
+//            $user->id === $prayer->owner->id;
     }
 
     /**
